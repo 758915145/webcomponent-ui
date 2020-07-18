@@ -46,3 +46,12 @@ window.addJs = function (url, sync) {
   })
   document.head.appendChild(s)
 }
+window.$wc_utiles = {
+  attributesString: function (el) {
+    var str = ''
+    Array.prototype.forEach.call(el.attributes, function (attr) {
+      str += attr.name + '="' + attr.nodeValue + '" '
+    })
+    return str
+  }
+}

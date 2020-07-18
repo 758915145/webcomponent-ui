@@ -1,0 +1,33 @@
+button{
+  display: inline-block;
+  height: 38px;
+  padding: 0 10px;
+  white-space: nowrap;
+  word-break:break-all;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  box-sizing:border-box;
+  border: 1px solid #C9C9C9;
+  outline: 0;
+}
+button:hover{
+  opacity:0.8;
+  border-color:#2196f3;
+}
+button:active{
+  opacity:1;
+}
+button[t="primary"]{
+  background-color: #2196f3;
+  color: #fff;
+  border-color:#2196f3;
+}
+button[disabled]{
+  border: 1px solid #DDD;
+  background-color: #FBFBFB;
+  color: #CCC;
+  cursor: not-allowed;
+  opacity: 1;
+}

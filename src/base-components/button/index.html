@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webcomponent-ui</title>
+  <base href="../../" />
+  <script src="./utils/index.js"></script>
+  <script>
+    if (!window.customElements)
+    addJs("https://cdn.bootcdn.net/ajax/libs/webcomponentsjs/2.4.3/webcomponents-bundle.js", true)
+    addJs("./base-components/button/index.js")
+  </script>
+  <style>
+    hr{
+      border:none;
+    }
+  </style>
+</head>
+<body>
+  <h1>按钮类型</h1>
+  <base-button type="primary">主要按钮</base-button>
+  <base-button>次要按钮</base-button>
+  <base-button disabled>禁用按钮</base-button>
+
+  <h1>按钮大小</h1>
+  <base-button type="primary" style="width:200px">宽200px</base-button>
+  <base-button style="height:38px">高38px</base-button>
+  <base-button style="height:30px">高30px</base-button>
+  <base-button style="height:24px">高24px</base-button>
+
+  <h1>带图标的</h1>
+  <base-button type="primary"><b>😀  </b>主要按钮</base-button>
+  <base-button type="primary">主要按钮<b>  📕</b></base-button>
+  <base-button type="primary"><b>😔</b></base-button>
+
+  <h1>圆角按钮</h1>
+  <base-button type="primary" style="border-radius:20px;">圆角按钮</base-button>
+  <base-button type="primary" style="border-radius:38px;">🙂</base-button>
+
+  <h1>按钮组</h1>
+  <style>
+    .btn-group{
+      border-radius:4px;
+      overflow: hidden;
+      display:inline-block;
+    }
+    .btn-group *{
+      float:left;
+      border-right:1px solid #1e88dc;
+    }
+    .btn-group *:last-child{
+      border-right:none;
+    }
+  </style>
+  <div class="btn-group">
+    <base-button type="primary" style="border-radius:0;">主要按钮</base-button>
+    <base-button type="primary" style="border-radius:0;">主要按钮</base-button>
+    <base-button type="primary" style="border-radius:0;">主要按钮</base-button>
+  </div>
+</body>
+</html>

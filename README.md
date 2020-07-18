@@ -1,11 +1,14 @@
-# webcomponent-ui
+# 适用场景广泛
 基于 shadow dom 的原生 web component ui 组件
 
 不管你用vue、react还是angular，或者什么框架都不用，都可以使用webcomponent-ui
 
+# 功能强大
+别的UI框架有的功能，webcomponent-ui都会尽量去实现，并且保持组件的单纯、简单。
+
 # 使用方法
 简单的用法
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,7 @@
 </html>
 ```
 考虑IE兼容性的写法
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
