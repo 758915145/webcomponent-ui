@@ -25,21 +25,21 @@ window.createClass = function (option) {
     return subClass;
   })(_wrapNativeSuper(option.extends || {}))
 }
-window.appendScript = function (option) {
-  if (window.appendScript.sync) {
-    window.appendScript.syncList = window.appendScript.syncList || []
-    window.appendScript.syncList.push(option)
+window.addJs = function (url, sync) {
+  if (window.addJs.sync) {
+    window.addJs.syncList = window.addJs.syncList || []
+    window.addJs.syncList.push({ url: url, sync: sync})
     return
   }
-  window.appendScript.sync = option.sync
+  window.addJs.sync = sync
   var s = document.createElement('script')
-  s.src = option.url
+  s.src = url
   s.addEventListener('load', function () {
-    window.appendScript.sync = false
-    while (window.appendScript.syncList && window.appendScript.syncList.length) {
-      var s = window.appendScript.syncList.shift()
-      window.appendScript(s)
-      if (s.sync) {
+    window.addJs.sync = false
+    while (window.addJs.syncList && window.addJs.syncList.length) {
+      var option = window.addJs.syncList.shift()
+      window.addJs(option.url, option.sync)
+      if (option.sync) {
         break
       }
     }
