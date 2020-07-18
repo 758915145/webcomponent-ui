@@ -13,6 +13,16 @@
   </script>
 </head>
 <body>
-  <base-input type="primary"></base-input>
+  <h1>基本用法</h1>
+  <base-input placeholder="请输入" oninput="input(event)"></base-input><span id="span"></span>
+  <h1>大小</h1>
+  <base-input value="38px" style="height:38px"></base-input>
+  <base-input value="30px" style="height:30px"></base-input>
+  <base-input value="24px" style="height:24px"></base-input>
+  <script>
+    function input (e) {
+      document.querySelector('#span').innerText = e.target.value
+    }
+  </script>
 </body>
 </html>
